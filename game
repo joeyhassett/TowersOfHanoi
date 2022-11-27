@@ -1,0 +1,93 @@
+from bridges.symbol_collection import *
+from bridges.bridges import *
+from bridges.rectangle import *
+from bridges.color import *
+import sys
+
+def main():
+
+    # create the Bridges object, set credentials
+    bridges = Bridges(5, "plumwise", "1651614968393")
+
+    # title, description
+    bridges.set_title("Towers of Hanoi")
+    bridges.set_description("The purpose of the assignment is to learn to display Symbols using SymbolCollection, to solve a problem using logical steps, and to display multiple visualizations to Bridges.")
+
+    sc = SymbolCollection()
+
+    # draw first peg
+    s1 = Rectangle(w=10, h=120, locx=-150.0, locy=-100)
+    s1.fill_color = "black"
+    s1.opacity = 0.8
+    sc.add_symbol(s1)
+
+    # draw second peg
+    s2 = Rectangle(w=10, h=120, locx=0, locy=-100)
+    s2.fill_color = "black"
+    s2.opacity = 0.8
+    sc.add_symbol(s2)
+    
+    # draw third peg
+    s3 = Rectangle(w=10, h=120, locx=150.0, locy=-100)
+    s3.fill_color = "black"
+    s3.opacity = 0.8
+    sc.add_symbol(s3)
+    
+    # draw base
+    s4 = Rectangle(w=1000000, h=10, locx=-10000, locy=-110)
+    s4.fill_color = "black"
+    s4.opacity = 0.5
+    sc.add_symbol(s4)
+    
+    # draw largest disk
+    s5 = Rectangle(w=75, h=10, locx=-182.5, locy=-100)
+    s5.fill_color = "red"
+    s5.opacity = 1
+    sc.add_symbol(s5)
+    
+    # draw medium-size disk
+    s6 = Rectangle(w=50, h=10, locx=-170, locy=-90)
+    s6.fill_color = "orange"
+    s6.opacity = 1
+    sc.add_symbol(s6)
+    
+    # draw smallest disk
+    s7 = Rectangle(w=25, h=10, locx=-157.5, locy=-80)
+    s7.fill_color = "blue"
+    s7.opacity = 1
+    sc.add_symbol(s7)
+
+    # first visualization
+    bridges.set_data_structure(sc)
+    bridges.visualize()
+    
+    # first move
+    s7.translate(300, -20)
+    bridges.visualize()
+    
+    # second move
+    s6.translate(150, -10)
+    bridges.visualize()
+    
+    # third move
+    s7.translate(-150, 10)
+    bridges.visualize()
+    
+    # fourth move
+    s5.translate(300, 0)
+    bridges.visualize()
+    
+    # fifth move
+    s7.translate(-150,-10)
+    bridges.visualize()
+    
+    # sixth move
+    s6.translate(150, 10)
+    bridges.visualize()
+    
+    # seventh move
+    s7.translate(300, 20)
+    bridges.visualize()
+    
+if __name__ == "__main__":
+    main()
