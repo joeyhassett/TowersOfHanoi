@@ -34,7 +34,7 @@ def main():
     sc.add_symbol(s3)
     
     # draw base
-    s4 = Rectangle(w=1000000, h=10, locx=-10000, locy=-110)
+    s4 = Rectangle(w=800, h=10, locx=-400, locy=-110)
     s4.fill_color = "black"
     s4.opacity = 0.5
     sc.add_symbol(s4)
