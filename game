@@ -7,7 +7,7 @@ import sys
 def main():
 
     # create the Bridges object, set credentials
-    bridges = Bridges(5, "plumwise", "1651614968393")
+    bridges = Bridges(5, "My Username", "My API Key")
 
     # title, description
     bridges.set_title("Towers of Hanoi")
